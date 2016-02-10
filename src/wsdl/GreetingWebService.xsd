@@ -1,0 +1,138 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). 
+	RI's version is Metro/2.3.1-b419 (branches/2.3.1.x-7937; 2014-08-04T08:11:03+0000) 
+	JAXWS-RI/2.2.10-b140803.1500 JAXWS-API/2.2.11 JAXB-RI/2.2.10-b140802.1033 
+	JAXB-API/2.2.12-b140109.1041 svn-revision#unknown. -->
+<xs:schema xmlns:tns="http://endpoint.ws/" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	version="1.0" targetNamespace="http://endpoint.ws/">
+
+	<xs:element name="Exception" type="tns:Exception" />
+
+	<xs:element name="getNumberOfGreetings" type="tns:getNumberOfGreetings" />
+
+	<xs:element name="getNumberOfGreetingsResponse" type="tns:getNumberOfGreetingsResponse" />
+
+	<xs:element name="getNumberOfHellosWithoutGoodBye" type="tns:getNumberOfHellosWithoutGoodBye" />
+
+	<xs:element name="getNumberOfHellosWithoutGoodByeResponse"
+		type="tns:getNumberOfHellosWithoutGoodByeResponse" />
+
+	<xs:element name="getSomeGreeting" type="tns:getSomeGreeting" />
+
+	<xs:element name="getSomeGreetingResponse" type="tns:getSomeGreetingResponse" />
+
+	<xs:element name="goodBye" type="tns:goodBye" />
+
+	<xs:element name="goodByeResponse" type="tns:goodByeResponse" />
+
+	<xs:element name="hello" type="tns:hello" />
+
+	<xs:element name="helloResponse" type="tns:helloResponse" />
+
+	<xs:element name="sayHello" type="tns:sayHello" />
+
+	<xs:element name="sayHelloResponse" type="tns:sayHelloResponse" />
+
+	<xs:element name="sendGreeting" type="tns:sendGreeting" />
+
+	<xs:element name="sendGreetingResponse" type="tns:sendGreetingResponse" />
+
+	<xs:complexType name="hello">
+		<xs:sequence />
+	</xs:complexType>
+
+	<xs:complexType name="helloResponse">
+		<xs:sequence />
+	</xs:complexType>
+
+	<xs:complexType name="sendGreeting">
+		<xs:sequence>
+			<xs:element name="arg0" type="tns:greeting" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="greeting">
+		<xs:sequence>
+			<xs:element name="greetingWord" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="receiver" type="tns:person" minOccurs="0" />
+			<xs:element name="sender" type="tns:person" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="person">
+		<xs:sequence>
+			<xs:element name="firstName" type="xs:string" minOccurs="0" />
+			<xs:element name="gender" type="tns:gender" minOccurs="0" />
+			<xs:element name="lastName" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="sendGreetingResponse">
+		<xs:sequence>
+			<xs:element name="return" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="sayHello">
+		<xs:sequence>
+			<xs:element name="who" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="sayHelloResponse">
+		<xs:sequence>
+			<xs:element name="return" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="getNumberOfGreetings">
+		<xs:sequence />
+	</xs:complexType>
+
+	<xs:complexType name="getNumberOfGreetingsResponse">
+		<xs:sequence>
+			<xs:element name="return" type="xs:int" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="goodBye">
+		<xs:sequence />
+	</xs:complexType>
+
+	<xs:complexType name="goodByeResponse">
+		<xs:sequence />
+	</xs:complexType>
+
+	<xs:complexType name="getNumberOfHellosWithoutGoodBye">
+		<xs:sequence />
+	</xs:complexType>
+
+	<xs:complexType name="getNumberOfHellosWithoutGoodByeResponse">
+		<xs:sequence>
+			<xs:element name="return" type="xs:int" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="Exception">
+		<xs:sequence>
+			<xs:element name="message" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="getSomeGreeting">
+		<xs:sequence />
+	</xs:complexType>
+
+	<xs:complexType name="getSomeGreetingResponse">
+		<xs:sequence>
+			<xs:element name="greeting" type="tns:greeting" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:simpleType name="gender">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="MALE" />
+			<xs:enumeration value="FEMALE" />
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>
